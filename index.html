@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#b5121b" />
+  <meta name="description" content="World Gym 專員 Allen 張博硯，協助全台分店單館、市區型與全台方案諮詢，可依需求推薦場館並提供線上辦理服務。" />
+  <meta property="og:title" content="Allen 張博硯｜World Gym 健身方案諮詢" />
+  <meta property="og:description" content="全台分店皆可協助，依你的運動需求推薦適合方案與場館，也可線上辦理。" />
+  <meta property="og:type" content="website" />
+  <title>Allen 張博硯｜World Gym 健身方案諮詢</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23b5121b%22/><text x=%2232%22 y=%2242%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22 font-weight=%22700%22 fill=%22white%22>A</text></svg>" />
+  <style>
+    :root {
+      --red: #b5121b;
+      --red-dark: #7d0b12;
+      --red-soft: #fff0f1;
+      --ink: #171717;
+      --muted: #666;
+      --line: #e8e8e8;
+      --paper: #ffffff;
+      --surface: #f6f6f6;
+      --radius: 22px;
+      --shadow: 0 16px 45px rgba(0,0,0,.10);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    .container { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255,255,255,.91);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+      backdrop-filter: blur(14px);
+    }
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: -.02em;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--red), #e42f39);
+      box-shadow: 0 8px 22px rgba(181,18,27,.25);
+    }
+    .brand small { display: block; color: var(--muted); font-size: 12px; line-height: 1.1; font-weight: 700; }
+    .nav-links { display: flex; gap: 22px; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: 14px; font-weight: 800; }
+    .nav-links a:hover { color: var(--red); }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      min-height: 48px;
+      padding: 0 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      text-decoration: none;
+      font-weight: 900;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: white; background: linear-gradient(135deg, var(--red), #db202a); box-shadow: 0 12px 26px rgba(181,18,27,.24); }
+    .btn-dark { color: white; background: #171717; box-shadow: 0 12px 26px rgba(0,0,0,.14); }
+    .btn-light { color: var(--ink); background: white; border: 1px solid var(--line); }
+    .btn-line { color: white; background: #06c755; box-shadow: 0 12px 26px rgba(6,199,85,.22); }
+    .btn svg { width: 20px; height: 20px; flex: 0 0 auto; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 92px 0 72px;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(181,18,27,.16), transparent 31%),
+        radial-gradient(circle at 8% 82%, rgba(0,0,0,.06), transparent 28%),
+        linear-gradient(180deg, #fff 0%, #fafafa 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border: 72px solid rgba(181,18,27,.05);
+      border-radius: 50%;
+      right: -180px;
+      bottom: -220px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--red-soft);
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .06em;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 5px rgba(181,18,27,.11); }
+    h1 {
+      margin: 22px 0 20px;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -.055em;
+    }
+    .accent { color: var(--red); }
+    .hero p { max-width: 650px; margin: 0; font-size: clamp(17px, 2vw, 21px); color: #4d4d4d; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .hero-points {
+      margin-top: 27px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #444;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .hero-points span { display: inline-flex; align-items: center; gap: 7px; }
+    .check { color: var(--red); font-weight: 1000; }
+
+    .profile-card {
+      position: relative;
+      z-index: 2;
+      border-radius: 30px;
+      overflow: hidden;
+      color: white;
+      background: linear-gradient(150deg, #242424 0%, #0c0c0c 64%, #2b080b 100%);
+      box-shadow: 0 30px 70px rgba(0,0,0,.22);
+    }
+    .profile-visual {
+      min-height: 250px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.06), transparent 52%),
+        repeating-linear-gradient(120deg, transparent 0 22px, rgba(255,255,255,.025) 22px 44px);
+    }
+    .profile-visual::before {
+      content: "ALLEN";
+      position: absolute;
+      font-size: clamp(70px, 11vw, 120px);
+      font-weight: 1000;
+      letter-spacing: -.08em;
+      color: rgba(255,255,255,.045);
+      transform: rotate(-8deg);
+    }
+    .profile-photo {
+      width: min(100%, 315px);
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 28px;
+      border: 8px solid rgba(255,255,255,.12);
+      box-shadow: 0 22px 50px rgba(0,0,0,.35);
+      transform: rotate(-3deg);
+    }
+    .photo-tag {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+    .profile-body { padding: 28px; }
+    .profile-body h2 { margin: 0; font-size: 29px; letter-spacing: -.03em; }
+    .profile-body p { color: rgba(255,255,255,.74); font-size: 15px; margin: 7px 0 20px; }
+    .profile-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .stat { padding: 13px 10px; border-radius: 16px; background: rgba(255,255,255,.07); text-align: center; }
+    .stat strong { display: block; font-size: 16px; }
+    .stat small { color: rgba(255,255,255,.62); }
+
+    section { padding: 84px 0; }
+    .section-head { max-width: 710px; margin-bottom: 36px; }
+    .section-head h2 { margin: 10px 0 11px; font-size: clamp(31px, 5vw, 48px); line-height: 1.15; letter-spacing: -.045em; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 17px; }
+
+    .plans { background: var(--surface); }
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .plan-card {
+      position: relative;
+      padding: 30px;
+      min-height: 310px;
+      border: 1px solid #e7e7e7;
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: 0 10px 25px rgba(0,0,0,.035);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .plan-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: #d7d7d7; }
+    .plan-card.featured { color: white; background: linear-gradient(145deg, #bd1520, #7e0910); border-color: transparent; }
+    .plan-icon { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: var(--red-soft); color: var(--red); font-size: 23px; }
+    .featured .plan-icon { background: rgba(255,255,255,.13); color: white; }
+    .plan-card h3 { font-size: 25px; margin: 21px 0 10px; }
+    .plan-card p { margin: 0; color: var(--muted); }
+    .featured p { color: rgba(255,255,255,.78); }
+    .plan-list { list-style: none; padding: 0; margin: 22px 0 0; }
+    .plan-list li { padding: 8px 0; border-top: 1px solid #eeeeee; font-size: 14px; font-weight: 800; }
+    .featured .plan-list li { border-color: rgba(255,255,255,.13); }
+    .badge { position: absolute; top: 20px; right: 20px; padding: 5px 10px; border-radius: 999px; background: white; color: var(--red); font-size: 12px; font-weight: 1000; }
+
+    .facility-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    .facility {
+      padding: 20px 12px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      text-align: center;
+      background: white;
+    }
+    .facility b { display: block; margin-top: 8px; font-size: 14px; }
+    .facility span { font-size: 28px; }
+    .facility-note { margin-top: 18px; color: var(--muted); font-size: 13px; }
+
+
+    .gallery { background: var(--surface); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .gallery-card {
+      overflow: hidden;
+      border-radius: 24px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(0,0,0,.05);
+    }
+    .gallery-card img {
+      display: block;
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      background: #f2f2f2;
+    }
+    .gallery-body { padding: 18px 20px 22px; }
+    .gallery-body h3 { margin: 0 0 6px; font-size: 22px; }
+    .gallery-body p { margin: 0; color: var(--muted); font-size: 14px; }
+
+
+    .gallery-wrap { display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
+    .gallery-main, .gallery-side article {
+      overflow: hidden;
+      border-radius: 24px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 25px rgba(0,0,0,.035);
+    }
+    .gallery-main img, .gallery-side img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .gallery-main img { aspect-ratio: 16 / 10; }
+    .gallery-side { display: grid; gap: 18px; }
+    .gallery-side img { aspect-ratio: 16 / 10; }
+    .gallery-copy { padding: 18px 20px 22px; }
+    .gallery-copy h3 { margin: 0 0 6px; font-size: 22px; letter-spacing: -.02em; }
+    .gallery-copy p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .process { background: #171717; color: white; }
+    .process .section-head p { color: rgba(255,255,255,.65); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .step { padding: 26px; border-radius: 20px; background: rgba(255,255,255,.065); border: 1px solid rgba(255,255,255,.09); }
+    .step-num { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 12px; background: var(--red); font-weight: 1000; }
+    .step h3 { margin: 18px 0 7px; font-size: 19px; }
+    .step p { margin: 0; color: rgba(255,255,255,.66); font-size: 14px; }
+
+    .consult { background: linear-gradient(180deg, #fff, #fff7f7); }
+    .consult-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 42px; align-items: start; }
+    .contact-panel {
+      position: sticky;
+      top: 98px;
+      border-radius: 26px;
+      padding: 32px;
+      color: white;
+      background: linear-gradient(145deg, #bd1520, #75080e);
+      box-shadow: 0 22px 50px rgba(181,18,27,.23);
+    }
+    .contact-panel h2 { font-size: 36px; margin: 0 0 12px; line-height: 1.15; }
+    .contact-panel p { color: rgba(255,255,255,.78); }
+    .contact-panel .btn { width: 100%; margin-top: 10px; }
+    .mini-contact { margin-top: 22px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.17); font-size: 14px; }
+    .mini-contact a { text-decoration: none; font-weight: 900; }
+    .qr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+    .qr-card { padding: 10px; border-radius: 15px; color: #222; background: white; text-align: center; }
+    .qr-card img { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; border-radius: 8px; }
+    .qr-card small { display: block; margin-top: 5px; font-size: 11px; font-weight: 900; }
+
+    .form-card { padding: 34px; border-radius: 26px; background: white; border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .form-card h3 { margin: 0 0 4px; font-size: 27px; }
+    .form-card > p { margin: 0 0 25px; color: var(--muted); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .field { display: grid; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: 14px; font-weight: 900; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid #d9d9d9;
+      border-radius: 14px;
+      padding: 13px 14px;
+      color: var(--ink);
+      background: white;
+      outline: none;
+      transition: box-shadow .2s ease, border-color .2s ease;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--red); box-shadow: 0 0 0 4px rgba(181,18,27,.10); }
+    textarea { min-height: 95px; resize: vertical; }
+    .check-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; }
+    .check-item { display: flex; align-items: center; gap: 8px; padding: 11px 12px; border: 1px solid var(--line); border-radius: 12px; font-size: 14px; }
+    .check-item input { width: 17px; height: 17px; accent-color: var(--red); }
+    .form-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+    .privacy { color: #777; font-size: 12px; margin-top: 13px; }
+    .status { margin-top: 14px; min-height: 24px; font-size: 14px; font-weight: 800; color: var(--red); }
+
+    .faq-list { display: grid; gap: 12px; }
+    details { border: 1px solid var(--line); border-radius: 17px; background: white; padding: 0 20px; }
+    summary { cursor: pointer; list-style: none; padding: 18px 0; font-weight: 900; display: flex; justify-content: space-between; gap: 16px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--red); font-size: 23px; line-height: 1; }
+    details[open] summary::after { content: "−"; }
+    details p { margin: 0; padding: 0 0 20px; color: var(--muted); }
+
+    .final-cta {
+      margin: 0 0 72px;
+      padding: 50px;
+      border-radius: 28px;
+      color: white;
+      text-align: center;
+      background:
+        linear-gradient(135deg, rgba(0,0,0,.15), transparent),
+        linear-gradient(135deg, #bf1520, #74080e);
+      box-shadow: 0 28px 65px rgba(181,18,27,.23);
+    }
+    .final-cta h2 { margin: 0 0 11px; font-size: clamp(30px, 5vw, 46px); letter-spacing: -.04em; }
+    .final-cta p { max-width: 650px; margin: 0 auto 23px; color: rgba(255,255,255,.82); }
+    .final-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+
+    footer { padding: 28px 0 90px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    .footer-grid { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+    footer strong { color: var(--ink); }
+    .floating-line {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: #06c755;
+      box-shadow: 0 16px 35px rgba(6,199,85,.34);
+      text-decoration: none;
+      transition: transform .2s ease;
+    }
+    .floating-line:hover { transform: translateY(-3px) scale(1.03); }
+    .floating-line svg { width: 31px; height: 31px; }
+
+    @media (max-width: 930px) {
+      .hero-grid, .consult-grid { grid-template-columns: 1fr; }
+      .profile-card { max-width: 620px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .facility-grid { grid-template-columns: repeat(3, 1fr); }
+      .gallery-wrap { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .contact-panel { position: static; }
+    }
+    @media (max-width: 680px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { padding: 66px 0 50px; }
+      .hero-actions .btn { width: 100%; }
+      .profile-photo { max-width: 240px; }
+      section { padding: 65px 0; }
+      .facility-grid, .steps, .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .check-grid { grid-template-columns: 1fr; }
+      .form-card { padding: 24px; }
+      .final-cta { padding: 38px 22px; border-radius: 22px; }
+      .final-actions .btn { width: 100%; }
+      .footer-grid { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="回到首頁">
+        <span class="brand-mark">A</span>
+        <span>Allen 張博硯<small>WORLD GYM 專員</small></span>
+      </a>
+      <nav class="nav-links" aria-label="主要選單">
+        <a href="#plans">方案</a>
+        <a href="#facilities">場館設備</a>
+        <a href="#gallery">場館照片</a>
+        <a href="#process">辦理流程</a>
+        <a class="btn btn-primary nav-cta" href="#consult">立即詢問</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> 全台分店皆可協助辦理</div>
+          <h1>找到適合你的<br><span class="accent">健身方案與場館</span></h1>
+          <p>我是 World Gym 專員 <strong>Allen 張博硯</strong>。不論你想固定單館訓練、跨區使用，或需要全台彈性，我會依生活圈、運動習慣與設備需求，協助你找到合適選擇。</p>
+          <div class="hero-actions">
+            <a class="btn btn-line" href="https://line.me/ti/p/zhF8DHe6Bo" target="_blank" rel="noopener noreferrer" aria-label="加 Allen LINE 詢問">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.49 2 2 5.73 2 10.31c0 4.11 3.65 7.55 8.58 8.2.33.07.79.22.91.5.11.25.07.65.03.91l-.14.86c-.04.25-.2.98.86.54 1.07-.45 5.76-3.39 7.86-5.8C21.55 13.94 22 12.29 22 10.31 22 5.73 17.51 2 12 2Z"/></svg>
+              加 LINE 直接詢問
+            </a>
+            <a class="btn btn-light" href="https://epype.worldgymtaiwan.com/nVMmlk" target="_blank" rel="noopener noreferrer">查看電子名片</a>
+          </div>
+          <div class="hero-points">
+            <span><b class="check">✓</b> 單館／市區／全台方案</span>
+            <span><b class="check">✓</b> 線上諮詢與辦理</span>
+            <span><b class="check">✓</b> 依需求推薦場館</span>
+          </div>
+        </div>
+
+        <article class="profile-card" aria-label="Allen 個人服務介紹">
+          <div class="profile-visual"><img class="profile-photo" src="allen-photo.jpg" alt="Allen 張博硯照片"><div class="photo-tag">Allen 張博硯</div></div>
+          <div class="profile-body">
+            <h2>Allen 張博硯</h2>
+            <p>World Gym 健身方案諮詢專員</p>
+            <div class="profile-stats">
+              <div class="stat"><strong>全台</strong><small>分店協助</small></div>
+              <div class="stat"><strong>3 類</strong><small>彈性方案</small></div>
+              <div class="stat"><strong>線上</strong><small>可辦理</small></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="plans" id="plans">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">方案選擇</span>
+          <h2>依你的生活方式，選擇適合的使用範圍</h2>
+          <p>沒有最好，只有最適合。Allen 會先了解你的生活圈、訓練頻率與常用設施，再協助你評估。</p>
+        </div>
+        <div class="card-grid">
+          <article class="plan-card">
+            <div class="plan-icon">⌂</div>
+            <h3>單館方案</h3>
+            <p>適合生活與工作地點固定，平常主要使用同一間場館的你。</p>
+            <ul class="plan-list">
+              <li>固定館別使用</li>
+              <li>需求單純、容易安排</li>
+              <li>適合住家或公司附近</li>
+            </ul>
+          </article>
+          <article class="plan-card featured">
+            <span class="badge">彈性推薦</span>
+            <div class="plan-icon">◎</div>
+            <h3>市區型方案</h3>
+            <p>適合在同一城市內移動，想依上下班、上課或休假彈性選館。</p>
+            <ul class="plan-list">
+              <li>同區多館更彈性</li>
+              <li>配合通勤與生活動線</li>
+              <li>可比較不同館別設施</li>
+            </ul>
+          </article>
+          <article class="plan-card">
+            <div class="plan-icon">✦</div>
+            <h3>全台方案</h3>
+            <p>適合常出差、旅行、跨縣市移動，或希望擁有更完整使用彈性的你。</p>
+            <ul class="plan-list">
+              <li>跨縣市使用更方便</li>
+              <li>適合工作地點不固定</li>
+              <li>全台場館選擇更多</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="facilities">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">多元訓練環境</span>
+          <h2>從訓練到放鬆，找到你真正會使用的設備</h2>
+          <p>不同場館各有特色，可依你最重視的設備與課程協助篩選。</p>
+        </div>
+        <div class="facility-grid">
+          <div class="facility"><span>🏋️</span><b>重訓器材</b></div>
+          <div class="facility"><span>🏃</span><b>有氧設備</b></div>
+          <div class="facility"><span>💃</span><b>豐富團課</b></div>
+          <div class="facility"><span>🏊</span><b>游泳池</b></div>
+          <div class="facility"><span>♨️</span><b>泡澡空間</b></div>
+          <div class="facility"><span>🧖</span><b>蒸氣室／烤箱</b></div>
+        </div>
+        <p class="facility-note">※ 游泳池、泡澡、蒸氣室與烤箱等設施僅部分場館提供，實際設備依各館公告為準。</p>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">場館與品牌實景</span>
+          <h2>先看看場館氛圍與 World Gym 風格</h2>
+          <p>如果你在意環境、訓練空間與整體感受，也可以直接告訴我你偏好的館內氛圍，我再幫你推薦適合的場館。</p>
+        </div>
+        <div class="gallery-wrap">
+          <article class="gallery-main">
+            <img src="wg-training.jpg" alt="World Gym 場館訓練區展示照片">
+            <div class="gallery-copy">
+              <h3>場館訓練氛圍</h3>
+              <p>從重訓、私人訓練到多元設備空間，都可依你偏好的訓練感受協助挑選館別。</p>
+            </div>
+          </article>
+          <div class="gallery-side">
+            <article>
+              <img src="wg-goods.jpg" alt="World Gym 品牌包款與水壺照片">
+              <div class="gallery-copy">
+                <h3>品牌周邊與入會好禮</h3>
+                <p>活動期間常有實用周邊與限定贈品，實際內容可再依當期活動說明。</p>
+              </div>
+            </article>
+            <article>
+              <img src="allen-photo.jpg" alt="Allen 張博硯本人照片">
+              <div class="gallery-copy">
+                <h3>由 Allen 為你服務</h3>
+                <p>全台分店皆可協助諮詢與安排，想了解方案、場館或線上辦理，都可以直接聯絡我。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">簡單四步驟</span>
+          <h2>不用自己查半天，直接告訴我你的需求</h2>
+          <p>可先線上了解，再依情況安排參觀或直接辦理。</p>
+        </div>
+        <div class="steps">
+          <article class="step"><span class="step-num">1</span><h3>說明需求</h3><p>告訴我常用地區、運動時間與想使用的設備。</p></article>
+          <article class="step"><span class="step-num">2</span><h3>推薦方案</h3><p>依生活圈與使用習慣，整理適合的方案和館別。</p></article>
+          <article class="step"><span class="step-num">3</span><h3>確認內容</h3><p>說明使用範圍、辦理方式及需準備的資料。</p></article>
+          <article class="step"><span class="step-num">4</span><h3>完成辦理</h3><p>可視方案與資格協助線上辦理，減少往返時間。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="consult" id="consult">
+      <div class="container consult-grid">
+        <aside class="contact-panel">
+          <h2>準備開始了嗎？</h2>
+          <p>先用下面的表單整理需求，再一鍵複製內容並加 LINE 詢問，溝通更快速。</p>
+          <a class="btn btn-line" href="https://line.me/ti/p/zhF8DHe6Bo" target="_blank" rel="noopener noreferrer">LINE 聯絡 Allen</a>
+          <a class="btn btn-light" href="tel:0981615051">撥打 0981-615-051</a>
+          <a class="btn btn-light" href="https://epype.worldgymtaiwan.com/nVMmlk" target="_blank" rel="noopener noreferrer">開啟電子名片</a>
+          <div class="mini-contact">
+            <strong>Allen 張博硯</strong><br>
+            電話：<a href="tel:0981615051">0981-615-051</a><br>
+            LINE ID：wweep123<br>
+            服務：全台分店方案諮詢／線上辦理
+            <div class="qr-grid">
+              <div class="qr-card"><img src="personal-qr.jpg" alt="Allen 個人 LINE QR Code"><small>掃碼加 LINE</small></div>
+              <div class="qr-card"><img src="card-qr.png" alt="Allen 電子名片 QR Code"><small>掃碼看名片</small></div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="form-card">
+          <h3>快速整理你的需求</h3>
+          <p>資料只在你的裝置上產生詢問文字，不會由本網站儲存或上傳。</p>
+          <form id="consultForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">稱呼</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="例如：陳先生" />
+              </div>
+              <div class="field">
+                <label for="phone">聯絡電話（選填）</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="例如：09xx-xxx-xxx" />
+              </div>
+              <div class="field">
+                <label for="area">主要活動地區</label>
+                <input id="area" name="area" type="text" placeholder="例如：台南安平／台北信義" />
+              </div>
+              <div class="field">
+                <label for="plan">想了解的方案</label>
+                <select id="plan" name="plan">
+                  <option value="還不確定，想請 Allen 推薦">還不確定，請 Allen 推薦</option>
+                  <option value="單館方案">單館方案</option>
+                  <option value="市區型方案">市區型方案</option>
+                  <option value="全台方案">全台方案</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="schedule">預計運動時段</label>
+                <select id="schedule" name="schedule">
+                  <option value="時間彈性">時間彈性</option>
+                  <option value="平日白天">平日白天</option>
+                  <option value="平日晚間">平日晚間</option>
+                  <option value="假日為主">假日為主</option>
+                  <option value="不固定">不固定</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="start">預計開始時間</label>
+                <select id="start" name="start">
+                  <option value="想先了解">想先了解</option>
+                  <option value="近期就想開始">近期就想開始</option>
+                  <option value="一個月內">一個月內</option>
+                  <option value="之後再評估">之後再評估</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label>重視的設備／服務（可複選）</label>
+                <div class="check-grid">
+                  <label class="check-item"><input type="checkbox" name="facility" value="重訓器材" />重訓器材</label>
+                  <label class="check-item"><input type="checkbox" name="facility" value="有氧設備" />有氧設備</label>
+                  <label class="check-item"><input type="checkbox" name="facility" value="團體課程" />團體課程</label>
+                  <label class="check-item"><input type="checkbox" name="facility" value="游泳池" />游泳池</label>
+                  <label class="check-item"><input type="checkbox" name="facility" value="泡澡空間" />泡澡空間</label>
+                  <label class="check-item"><input type="checkbox" name="facility" value="蒸氣室／烤箱" />蒸氣室／烤箱</label>
+                </div>
+              </div>
+              <div class="field full">
+                <label for="note">其他需求（選填）</label>
+                <textarea id="note" name="note" placeholder="例如：希望離公司近、想先參觀、有朋友一起加入⋯"></textarea>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="button" id="copyBtn">複製詢問內容</button>
+              <button class="btn btn-line" type="button" id="lineBtn">複製並開啟 LINE</button>
+            </div>
+            <div class="privacy">送出前可先確認內容；網站不會將資料傳送到伺服器。</div>
+            <div class="status" id="formStatus" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">常見問題</span>
+          <h2>你可能會想先知道</h2>
+        </div>
+        <div class="faq-list">
+          <details><summary>我不確定要選哪個方案，可以先詢問嗎？</summary><p>可以。提供常用地區、預計運動頻率、是否會跨區，以及重視的設備，我會先協助你縮小選擇範圍。</p></details>
+          <details><summary>全台任何分店都可以協助嗎？</summary><p>Allen 可協助全台分店相關方案諮詢與辦理安排；實際可用範圍與資格仍以當期方案及官方規定為準。</p></details>
+          <details><summary>一定要到現場才能辦理嗎？</summary><p>不一定。部分流程可線上完成；確認需求後，我會告訴你適合的辦理方式與需要準備的資料。</p></details>
+          <details><summary>每間場館都有游泳池、泡澡與蒸氣室嗎？</summary><p>沒有，這些設備僅部分場館提供。建議先告訴我你重視哪些設施，我會協助確認與篩選。</p></details>
+          <details><summary>網頁上的方案就是最終價格嗎？</summary><p>本頁主要介紹方案類型與服務流程，實際費用、活動與合約內容會依館別、資格及當期公告個別確認。</p></details>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="final-cta">
+        <h2>不用先做完功課，再來問我</h2>
+        <p>直接說明你平常在哪裡活動、想怎麼運動，我會協助你找到適合的方案與場館。</p>
+        <div class="final-actions">
+          <a class="btn btn-line" href="https://line.me/ti/p/zhF8DHe6Bo" target="_blank" rel="noopener noreferrer">加 LINE 詢問 Allen</a>
+          <a class="btn btn-light" href="https://epype.worldgymtaiwan.com/nVMmlk" target="_blank" rel="noopener noreferrer">查看電子名片</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>Allen 張博硯</strong><br>World Gym 健身方案諮詢專員｜全台分店皆可協助</div>
+      <div>本頁為專員個人服務介紹頁。實際方案、費用、合約內容與場館設施，以 World Gym 官方資訊及現場公告為準。<br>© <span id="year"></span> Allen 張博硯</div>
+    </div>
+  </footer>
+
+  <a class="floating-line" href="https://line.me/ti/p/zhF8DHe6Bo" target="_blank" rel="noopener noreferrer" aria-label="開啟 LINE 聯絡 Allen">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.49 2 2 5.73 2 10.31c0 4.11 3.65 7.55 8.58 8.2.33.07.79.22.91.5.11.25.07.65.03.91l-.14.86c-.04.25-.2.98.86.54 1.07-.45 5.76-3.39 7.86-5.8C21.55 13.94 22 12.29 22 10.31 22 5.73 17.51 2 12 2Z"/></svg>
+  </a>
+
+  <script>
+    const LINE_URL = 'https://line.me/ti/p/zhF8DHe6Bo';
+    const form = document.getElementById('consultForm');
+    const statusEl = document.getElementById('formStatus');
+
+    function createMessage() {
+      const data = new FormData(form);
+      const facilities = data.getAll('facility');
+      const name = (data.get('name') || '').trim() || '未填寫';
+      const phone = (data.get('phone') || '').trim() || '未填寫';
+      const area = (data.get('area') || '').trim() || '未填寫';
+      const note = (data.get('note') || '').trim() || '無';
+
+      return [
+        'Allen 你好，我想了解 World Gym 方案：',
+        '',
+        `稱呼：${name}`,
+        `聯絡電話：${phone}`,
+        `主要活動地區：${area}`,
+        `想了解的方案：${data.get('plan')}`,
+        `預計運動時段：${data.get('schedule')}`,
+        `預計開始時間：${data.get('start')}`,
+        `重視設備／服務：${facilities.length ? facilities.join('、') : '未特別指定'}`,
+        `其他需求：${note}`,
+        '',
+        '再麻煩你協助推薦適合的方案與場館，謝謝！'
+      ].join('\n');
+    }
+
+    async function copyMessage() {
+      const message = createMessage();
+      try {
+        await navigator.clipboard.writeText(message);
+        statusEl.textContent = '已複製詢問內容，可直接貼到 LINE 傳給 Allen。';
+        return true;
+      } catch (error) {
+        const helper = document.createElement('textarea');
+        helper.value = message;
+        helper.setAttribute('readonly', '');
+        helper.style.position = 'fixed';
+        helper.style.opacity = '0';
+        document.body.appendChild(helper);
+        helper.select();
+        const success = document.execCommand('copy');
+        document.body.removeChild(helper);
+        statusEl.textContent = success ? '已複製詢問內容，可直接貼到 LINE。' : '瀏覽器無法自動複製，請手動整理需求後傳給 Allen。';
+        return success;
+      }
+    }
+
+    document.getElementById('copyBtn').addEventListener('click', copyMessage);
+    document.getElementById('lineBtn').addEventListener('click', async () => {
+      await copyMessage();
+      window.open(LINE_URL, '_blank', 'noopener,noreferrer');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Allen 張博硯",
+    "jobTitle": "World Gym 健身方案諮詢專員",
+    "telephone": "+886-981-615-051",
+    "url": "https://epype.worldgymtaiwan.com/nVMmlk",
+    "sameAs": ["https://line.me/ti/p/zhF8DHe6Bo"]
+  }
+  </script>
+</body>
+</html>
