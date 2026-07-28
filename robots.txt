@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ktpt9sngmp-lgtm.github.io/allen-worldgym-site/sitemap.xml
