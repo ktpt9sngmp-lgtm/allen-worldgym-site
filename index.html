@@ -4,26 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#b5121b" />
-<meta name="robots" content="index,follow,max-image-preview:large" />
-<meta name="description" content="World Gym 專員 Allen 張博硯，提供全台 World Gym 健身方案、免費體驗、月費諮詢、場館推薦及線上辦理服務。" />
-<meta name="keywords" content="World Gym,World Gym 台南,World Gym 安平,健身房,免費體驗,World Gym 月費,Allen 張博硯,World Gym 專員" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="World Gym 專員 Allen 張博硯，提供全台 World Gym 健身方案、12／24／36 個月合約期間、月費、手續費、入會費、扣款方式、場館推薦及線上辦理服務。" />
+  <meta name="keywords" content="World Gym,World Gym 台南,World Gym 安平,健身房,免費體驗,World Gym 月費,World Gym 合約,12個月,24個月,36個月,World Gym 手續費,World Gym 入會費,信用卡扣款,簽帳金融卡,Allen 張博硯,World Gym 專員" />
 
-<title>Allen 張博硯｜World Gym 全台健身方案｜免費體驗・線上辦理</title>
-<link rel="canonical" href="https://ktpt9sngmp-lgtm.github.io/allen-worldgym-site/" />
+  <title>Allen 張博硯｜World Gym 全台健身方案｜費用諮詢・線上辦理</title>
+  <link rel="canonical" href="https://ktpt9sngmp-lgtm.github.io/allen-worldgym-site/" />
 
-<meta property="og:locale" content="zh_TW" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Allen 張博硯｜World Gym 全台健身方案" />
-<meta property="og:description" content="全台 World Gym 分店皆可協助，提供方案諮詢、免費體驗、場館推薦及線上辦理服務。" />
-<meta property="og:url" content="https://ktpt9sngmp-lgtm.github.io/allen-worldgym-site/" />
-<meta property="og:image" content="https://ktpt9sngmp-lgtm.github.io/allen-worldgym-site/allen-photo.jpg" />
-<meta property="og:image:alt" content="World Gym 專員 Allen 張博硯" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Allen 張博硯｜World Gym 全台健身方案" />
+  <meta property="og:description" content="全台 World Gym 分店皆可協助，提供 12／24／36 個月合約方案、月費、手續費、入會費、扣款方式、場館推薦及線上辦理諮詢。" />
+  <meta property="og:url" content="https://ktpt9sngmp-lgtm.github.io/allen-worldgym-site/" />
+  <meta property="og:image" content="https://ktpt9sngmp-lgtm.github.io/allen-worldgym-site/allen-photo.jpg" />
+  <meta property="og:image:alt" content="World Gym 專員 Allen 張博硯" />
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Allen 張博硯｜World Gym 全台健身方案" />
-<meta name="twitter:description" content="全台分店方案諮詢、免費體驗、場館推薦與線上辦理。" />
-<meta name="twitter:image" content="https://ktpt9sngmp-lgtm.github.io/allen-worldgym-site/allen-photo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Allen 張博硯｜World Gym 全台健身方案" />
+  <meta name="twitter:description" content="全台分店 12／24／36 個月合約方案、費用、扣款方式、場館推薦與線上辦理諮詢。" />
+  <meta name="twitter:image" content="https://ktpt9sngmp-lgtm.github.io/allen-worldgym-site/allen-photo.jpg" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23b5121b%22/><text x=%2232%22 y=%2242%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22 font-weight=%22700%22 fill=%22white%22>A</text></svg>" />
+
   <style>
     :root {
       --red: #b5121b;
@@ -227,7 +228,7 @@
     .stat small { color: rgba(255,255,255,.62); }
 
     section { padding: 84px 0; }
-    .section-head { max-width: 710px; margin-bottom: 36px; }
+    .section-head { max-width: 760px; margin-bottom: 36px; }
     .section-head h2 { margin: 10px 0 11px; font-size: clamp(31px, 5vw, 48px); line-height: 1.15; letter-spacing: -.045em; }
     .section-head p { margin: 0; color: var(--muted); font-size: 17px; }
 
@@ -255,40 +256,46 @@
     .featured .plan-list li { border-color: rgba(255,255,255,.13); }
     .badge { position: absolute; top: 20px; right: 20px; padding: 5px 10px; border-radius: 999px; background: white; color: var(--red); font-size: 12px; font-weight: 1000; }
 
-    .facility-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
-    .facility {
-      padding: 20px 12px;
+    .fees { background: white; }
+    .fee-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .fee-card {
+      padding: 28px;
       border: 1px solid var(--line);
-      border-radius: 18px;
-      text-align: center;
-      background: white;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, #fff, #fffafa);
+      box-shadow: 0 12px 28px rgba(0,0,0,.045);
     }
+    .fee-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: var(--red);
+      background: var(--red-soft);
+      font-size: 24px;
+    }
+    .fee-card h3 { margin: 18px 0 8px; font-size: 23px; }
+    .fee-card p { margin: 0; color: var(--muted); }
+    .fee-card strong { color: var(--ink); }
+    .fee-note {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-radius: 17px;
+      color: #4c3435;
+      background: var(--red-soft);
+      border: 1px solid #f2cfd2;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .facility-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    .facility { padding: 20px 12px; border: 1px solid var(--line); border-radius: 18px; text-align: center; background: white; }
     .facility b { display: block; margin-top: 8px; font-size: 14px; }
     .facility span { font-size: 28px; }
     .facility-note { margin-top: 18px; color: var(--muted); font-size: 13px; }
 
-
     .gallery { background: var(--surface); }
-    .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .gallery-card {
-      overflow: hidden;
-      border-radius: 24px;
-      background: white;
-      border: 1px solid var(--line);
-      box-shadow: 0 14px 34px rgba(0,0,0,.05);
-    }
-    .gallery-card img {
-      display: block;
-      width: 100%;
-      height: 340px;
-      object-fit: cover;
-      background: #f2f2f2;
-    }
-    .gallery-body { padding: 18px 20px 22px; }
-    .gallery-body h3 { margin: 0 0 6px; font-size: 22px; }
-    .gallery-body p { margin: 0; color: var(--muted); font-size: 14px; }
-
-
     .gallery-wrap { display: grid; grid-template-columns: 1.08fr .92fr; gap: 18px; }
     .gallery-main, .gallery-side article {
       overflow: hidden;
@@ -297,11 +304,7 @@
       border: 1px solid var(--line);
       box-shadow: 0 10px 25px rgba(0,0,0,.035);
     }
-    .gallery-main img, .gallery-side img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
+    .gallery-main img, .gallery-side img { width: 100%; display: block; object-fit: cover; }
     .gallery-main img { aspect-ratio: 16 / 10; }
     .gallery-side { display: grid; gap: 18px; }
     .gallery-side img { aspect-ratio: 16 / 10; }
@@ -333,7 +336,7 @@
     .contact-panel .btn { width: 100%; margin-top: 10px; }
     .mini-contact { margin-top: 22px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.17); font-size: 14px; }
     .mini-contact a { text-decoration: none; font-weight: 900; }
-    .qr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+    .qr-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 18px; }
     .qr-card { padding: 10px; border-radius: 15px; color: #222; background: white; text-align: center; }
     .qr-card img { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; border-radius: 8px; }
     .qr-card small { display: block; margin-top: 5px; font-size: 11px; font-weight: 900; }
@@ -378,9 +381,7 @@
       border-radius: 28px;
       color: white;
       text-align: center;
-      background:
-        linear-gradient(135deg, rgba(0,0,0,.15), transparent),
-        linear-gradient(135deg, #bf1520, #74080e);
+      background: linear-gradient(135deg, rgba(0,0,0,.15), transparent), linear-gradient(135deg, #bf1520, #74080e);
       box-shadow: 0 28px 65px rgba(181,18,27,.23);
     }
     .final-cta h2 { margin: 0 0 11px; font-size: clamp(30px, 5vw, 46px); letter-spacing: -.04em; }
@@ -412,7 +413,7 @@
     @media (max-width: 930px) {
       .hero-grid, .consult-grid { grid-template-columns: 1fr; }
       .profile-card { max-width: 620px; }
-      .card-grid { grid-template-columns: 1fr; }
+      .card-grid, .fee-grid { grid-template-columns: 1fr; }
       .facility-grid { grid-template-columns: repeat(3, 1fr); }
       .gallery-wrap { grid-template-columns: 1fr; }
       .steps { grid-template-columns: repeat(2, 1fr); }
@@ -447,8 +448,8 @@
       </a>
       <nav class="nav-links" aria-label="主要選單">
         <a href="#plans">方案</a>
+        <a href="#fees">費用與扣款</a>
         <a href="#facilities">場館設備</a>
-        <a href="#gallery">場館照片</a>
         <a href="#process">辦理流程</a>
         <a class="btn btn-primary nav-cta" href="#consult">立即詢問</a>
       </nav>
@@ -471,8 +472,8 @@
           </div>
           <div class="hero-points">
             <span><b class="check">✓</b> 單館／市區／全台方案</span>
-            <span><b class="check">✓</b> 線上諮詢與辦理</span>
-            <span><b class="check">✓</b> 依需求推薦場館</span>
+            <span><b class="check">✓</b> 信用卡／簽帳金融卡</span>
+            <span><b class="check">✓</b> 費用與合約先說明</span>
           </div>
         </div>
 
@@ -534,6 +535,39 @@
       </div>
     </section>
 
+    <section class="fees" id="fees">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">費用與扣款</span>
+          <h2>合約期間、扣款方式與費用，辦理前先說清楚</h2>
+          <p>合約方案分為 12／24／36 個月，月費與優惠會依館別、合約期間、資格及當期活動確認。</p>
+        </div>
+        <div class="fee-grid">
+          <article class="fee-card">
+            <div class="fee-icon">📅</div>
+            <h3>合約期間</h3>
+            <p>合約方案分為<strong>12 個月</strong>、<strong>24 個月</strong>及<strong>36 個月</strong>。不同期間的月費與優惠可能不同，會依需求協助比較。</p>
+          </article>
+          <article class="fee-card">
+            <div class="fee-icon">💳</div>
+            <h3>扣款方式</h3>
+            <p>可使用<strong>信用卡</strong>或<strong>簽帳金融卡</strong>辦理扣款。實際可用卡別與扣款規則，會在申辦時協助確認。</p>
+          </article>
+          <article class="fee-card">
+            <div class="fee-icon">🧾</div>
+            <h3>手續費</h3>
+            <p><strong>手續費為申辦時一定會收取的一次性費用</strong>，實際金額會依館別、方案及申辦資格個別確認。</p>
+          </article>
+          <article class="fee-card">
+            <div class="fee-icon">🏷️</div>
+            <h3>入會費</h3>
+            <p>入會費會依方案收取，並視<strong>當期活動內容折抵</strong>；實際折抵金額與資格會在辦理前說明。</p>
+          </article>
+        </div>
+        <div class="fee-note">正式辦理前，Allen 會先說明 12／24／36 個月合約期間、月費、可使用館別、必收手續費、入會費活動折抵與扣款方式，確認內容後再完成申辦。</div>
+      </div>
+    </section>
+
     <section id="facilities">
       <div class="container">
         <div class="section-head">
@@ -553,7 +587,7 @@
       </div>
     </section>
 
-    <section id="gallery">
+    <section class="gallery" id="gallery">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">場館與品牌實景</span>
@@ -580,7 +614,7 @@
               <img src="allen-photo.jpg" alt="Allen 張博硯本人照片">
               <div class="gallery-copy">
                 <h3>由 Allen 為你服務</h3>
-                <p>全台分店皆可協助諮詢與安排，想了解方案、場館或線上辦理，都可以直接聯絡我。</p>
+                <p>全台分店皆可協助諮詢與安排，想了解方案、場館、費用或線上辦理，都可以直接聯絡我。</p>
               </div>
             </article>
           </div>
@@ -598,7 +632,7 @@
         <div class="steps">
           <article class="step"><span class="step-num">1</span><h3>說明需求</h3><p>告訴我常用地區、運動時間與想使用的設備。</p></article>
           <article class="step"><span class="step-num">2</span><h3>推薦方案</h3><p>依生活圈與使用習慣，整理適合的方案和館別。</p></article>
-          <article class="step"><span class="step-num">3</span><h3>確認內容</h3><p>說明使用範圍、辦理方式及需準備的資料。</p></article>
+          <article class="step"><span class="step-num">3</span><h3>確認合約與費用</h3><p>比較 12／24／36 個月方案，並說明月費、必收手續費、入會費折抵、扣款方式與使用範圍。</p></article>
           <article class="step"><span class="step-num">4</span><h3>完成辦理</h3><p>可視方案與資格協助線上辦理，減少往返時間。</p></article>
         </div>
       </div>
@@ -651,6 +685,23 @@
                 </select>
               </div>
               <div class="field">
+                <label for="contract">想了解的合約期間</label>
+                <select id="contract" name="contract">
+                  <option value="還不確定，想請 Allen 比較">還不確定，請 Allen 比較</option>
+                  <option value="12 個月">12 個月</option>
+                  <option value="24 個月">24 個月</option>
+                  <option value="36 個月">36 個月</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="payment">預計扣款方式</label>
+                <select id="payment" name="payment">
+                  <option value="想先了解">想先了解</option>
+                  <option value="信用卡">信用卡</option>
+                  <option value="簽帳金融卡">簽帳金融卡</option>
+                </select>
+              </div>
+              <div class="field">
                 <label for="schedule">預計運動時段</label>
                 <select id="schedule" name="schedule">
                   <option value="時間彈性">時間彈性</option>
@@ -682,7 +733,7 @@
               </div>
               <div class="field full">
                 <label for="note">其他需求（選填）</label>
-                <textarea id="note" name="note" placeholder="例如：希望離公司近、想先參觀、有朋友一起加入⋯"></textarea>
+                <textarea id="note" name="note" placeholder="例如：想比較 12／24／36 個月月費、了解入會費活動折抵、希望離公司近、想先參觀⋯"></textarea>
               </div>
             </div>
             <div class="form-actions">
@@ -703,11 +754,14 @@
           <h2>你可能會想先知道</h2>
         </div>
         <div class="faq-list">
+          <details><summary>可以使用什麼方式扣款？</summary><p>扣款方式可使用信用卡或簽帳金融卡。實際可用卡別、扣款時間與申辦規則，會在正式辦理前協助確認。</p></details>
+          <details><summary>手續費與入會費怎麼計算？</summary><p>手續費是申辦時一定會收取的一次性費用；入會費則會依當期活動內容折抵。實際金額、折抵資格與方案內容會在辦理前完整說明。</p></details>
+          <details><summary>合約期間有哪些選擇？</summary><p>合約方案分為 12 個月、24 個月及 36 個月。不同期間的月費與優惠可能不同，可先告訴我預計使用多久，我會協助比較。</p></details>
           <details><summary>我不確定要選哪個方案，可以先詢問嗎？</summary><p>可以。提供常用地區、預計運動頻率、是否會跨區，以及重視的設備，我會先協助你縮小選擇範圍。</p></details>
           <details><summary>全台任何分店都可以協助嗎？</summary><p>Allen 可協助全台分店相關方案諮詢與辦理安排；實際可用範圍與資格仍以當期方案及官方規定為準。</p></details>
           <details><summary>一定要到現場才能辦理嗎？</summary><p>不一定。部分流程可線上完成；確認需求後，我會告訴你適合的辦理方式與需要準備的資料。</p></details>
           <details><summary>每間場館都有游泳池、泡澡與蒸氣室嗎？</summary><p>沒有，這些設備僅部分場館提供。建議先告訴我你重視哪些設施，我會協助確認與篩選。</p></details>
-          <details><summary>網頁上的方案就是最終價格嗎？</summary><p>本頁主要介紹方案類型與服務流程，實際費用、活動與合約內容會依館別、資格及當期公告個別確認。</p></details>
+          <details><summary>網頁上的方案就是最終價格嗎？</summary><p>本頁主要介紹方案類型與服務流程。合約期間為 12／24／36 個月；實際月費、必收手續費、入會費活動折抵與合約內容，會依館別、資格及當期公告個別確認。</p></details>
         </div>
       </div>
     </section>
@@ -715,7 +769,7 @@
     <div class="container">
       <section class="final-cta">
         <h2>不用先做完功課，再來問我</h2>
-        <p>直接說明你平常在哪裡活動、想怎麼運動，我會協助你找到適合的方案與場館。</p>
+        <p>直接說明你平常在哪裡活動、想怎麼運動，我會協助你確認方案、費用、扣款方式與適合的場館。</p>
         <div class="final-actions">
           <a class="btn btn-line" href="https://line.me/ti/p/zhF8DHe6Bo" target="_blank" rel="noopener noreferrer">加 LINE 詢問 Allen</a>
           <a class="btn btn-light" href="https://epype.worldgymtaiwan.com/nVMmlk" target="_blank" rel="noopener noreferrer">查看電子名片</a>
@@ -727,7 +781,7 @@
   <footer>
     <div class="container footer-grid">
       <div><strong>Allen 張博硯</strong><br>World Gym 健身方案諮詢專員｜全台分店皆可協助</div>
-      <div>本頁為專員個人服務介紹頁。實際方案、費用、合約內容與場館設施，以 World Gym 官方資訊及現場公告為準。<br>© <span id="year"></span> Allen 張博硯</div>
+      <div>本頁為專員個人服務介紹頁。合約期間分為 12／24／36 個月；實際方案、月費、手續費、入會費活動折抵、扣款規則、合約內容與場館設施，以 World Gym 官方資訊及現場公告為準。<br>© <span id="year"></span> Allen 張博硯</div>
     </div>
   </footer>
 
@@ -755,12 +809,14 @@
         `聯絡電話：${phone}`,
         `主要活動地區：${area}`,
         `想了解的方案：${data.get('plan')}`,
+        `想了解的合約期間：${data.get('contract')}`,
+        `預計扣款方式：${data.get('payment')}`,
         `預計運動時段：${data.get('schedule')}`,
         `預計開始時間：${data.get('start')}`,
         `重視設備／服務：${facilities.length ? facilities.join('、') : '未特別指定'}`,
         `其他需求：${note}`,
         '',
-        '再麻煩你協助推薦適合的方案與場館，謝謝！'
+        '也想一起確認 12／24／36 個月方案月費、必收手續費、入會費活動折抵與合約內容，謝謝！'
       ].join('\n');
     }
 
@@ -804,19 +860,17 @@
     "url": "https://epype.worldgymtaiwan.com/nVMmlk",
     "sameAs": ["https://line.me/ti/p/zhF8DHe6Bo"]
   }
-  
-</script>
+  </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Allen 張博硯｜World Gym 全台健身方案",
-  "url": "https://ktpt9sngmp-lgtm.github.io/allen-worldgym-site/",
-  "description": "World Gym 全台健身方案、免費體驗、月費諮詢、場館推薦與線上辦理。",
-  "inLanguage": "zh-TW"
-}
-</script>
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Allen 張博硯｜World Gym 全台健身方案",
+    "url": "https://ktpt9sngmp-lgtm.github.io/allen-worldgym-site/",
+    "description": "World Gym 全台健身方案、12／24／36 個月合約期間、月費、手續費、入會費活動折抵、扣款方式、場館推薦與線上辦理。",
+    "inLanguage": "zh-TW"
+  }
+  </script>
 </body>
 </html>
